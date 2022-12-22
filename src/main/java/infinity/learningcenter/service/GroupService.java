@@ -2,6 +2,7 @@ package infinity.learningcenter.service;
 
 import infinity.learningcenter.dto.GroupDto;
 import infinity.learningcenter.dto.ResponseDto;
+import infinity.learningcenter.dto.WeekTableDto;
 
 import java.util.List;
 

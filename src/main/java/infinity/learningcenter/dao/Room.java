@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,4 +20,8 @@ public class Room {
     private Boolean booked;
     @OneToMany(mappedBy = "roomId")
     private List<Group> groupList;
+    public List<Group> getGroupList(){
+        if(this.groupList == null) return new ArrayList<>();
+        return this.groupList;
+    }
 }

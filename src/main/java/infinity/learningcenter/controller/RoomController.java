@@ -2,11 +2,14 @@ package infinity.learningcenter.controller;
 
 import infinity.learningcenter.dto.ResponseDto;
 import infinity.learningcenter.dto.RoomDto;
+import infinity.learningcenter.dto.WeekTableDto;
 import infinity.learningcenter.service.RoomService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
@@ -42,5 +45,13 @@ public class RoomController {
     @DeleteMapping("/{id}")
     public ResponseDto<String> deleteById(@PathVariable("id") Integer id) {
         return service.deleteById(id);
+    }
+    @GetMapping("/week-id/{id}")
+    public ResponseDto<WeekTableDto> getByWeekId(@PathVariable @Valid @Min(value = 1) @Max(value = 7) Integer id) {
+        return service.getByWeekId(id);
+    }
+    @GetMapping("/week")
+    public ResponseDto<List<WeekTableDto>> getOneWeek() {
+        return service.getOneWeek();
     }
 }
