@@ -47,7 +47,7 @@ public class RoomController {
         return service.deleteById(id);
     }
     @GetMapping("/week-id/{id}")
-    public ResponseDto<WeekTableDto> getByWeekId(@PathVariable @Valid @Min(value = 1) @Max(value = 7) Integer id) {
+    public ResponseDto<WeekTableDto> getByWeekId(@PathVariable @Valid @Min(value = 1) @Max(value = 6) Integer id) {
         return service.getByWeekId(id);
     }
     @GetMapping("/week")
