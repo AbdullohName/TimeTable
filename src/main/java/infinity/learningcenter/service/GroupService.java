@@ -14,4 +14,5 @@ public interface GroupService {
     ResponseDto<List<GroupDto>> getByWeekId(Integer id);
     ResponseDto<GroupDto> update(GroupDto groupDto,Integer id); //94 656 07 00
     ResponseDto<String> deleteById(Integer id);
+    ResponseDto<String> clearAll();
 }

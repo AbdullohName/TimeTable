@@ -128,4 +128,24 @@ public class GroupServiceImpl implements GroupService {
                 .success(false)
                 .build();
     }
+
+    @Override
+    public ResponseDto<String> clearAll() {
+        try {
+            repository.clearAll();
+            return ResponseDto.<String>builder()
+                    .code(0)
+                    .message("OK")
+                    .success(true)
+                    .data("Successfully")
+                    .build();
+        } catch (Exception e) {
+            return ResponseDto.<String>builder()
+                    .code(-2)
+                    .message("Failed")
+                    .success(false)
+                    .data(e.getMessage())
+                    .build();
+        }
+    }
 }

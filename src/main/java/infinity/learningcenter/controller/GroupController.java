@@ -42,4 +42,8 @@ public class GroupController {
     public ResponseDto<String> deleteById(Integer id) {
         return service.deleteById(id);
     }
+    @PostMapping("/clear")
+    public ResponseDto<String> clearAll() {
+        return service.clearAll();
+    }
 }
